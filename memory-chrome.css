@@ -1,0 +1,70 @@
+* {
+  font: 2.5vh 'Vollkorn';
+}
+#main {
+  background: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  height: 94vh;
+  padding: 1vh;
+  width: 98%;
+  border: 0.5vh solid black;
+}
+#logo {
+  padding: 1vh;
+  font: 6vh 'Barlow Condensed';
+  font-weight: 500;
+  background: rgb(211, 60, 36);
+}
+#header {
+  order: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: flex-start;
+  width: 54%;
+}
+#win {
+  padding: 1vh;
+  font: 6vh 'Barlow Condensed';
+  font-weight: 500;
+  background: rgb(35, 209, 146);
+}
+#header p {
+  margin: 1.2vh;
+}
+#header button {
+  margin: 2vh;
+  padding: 3vh;
+  border: 1px solid black;
+}
+#board {
+  order: 1;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  align-content: stretch;
+  padding: 1.5vh;
+  color: white;
+  background: white;
+  width: 46%;
+
+  visibility: hidden;
+}
+
+img.card {
+  height: 22vh;
+  width: 22vh;
+  margin: 0.3vh -1vh;
+  border: 0.2vh solid rgba(10, 10, 10, 0.1);
+}
+#p-muted {
+  cursor: pointer;
+}
+#p-muted:hover {
+  background: grey;
+}
