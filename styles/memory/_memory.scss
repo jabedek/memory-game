@@ -14,4 +14,28 @@ html {
 .memory {
     display: flex;
     height: 100vh;
+
+}
+
+.win {
+    background: #ddd;
+    background-size: 300%;
+    background-image: linear-gradient(90deg, #d33c24, #23d192, #F5E663);
+    animation: bg-animation 5s infinite; // originally was 25s
+
+}
+
+
+@keyframes bg-animation {
+    0% {
+        background-position: left
+    }
+
+    50% {
+        background-position: right
+    }
+
+    100% {
+        background-position: left
+    }
 }

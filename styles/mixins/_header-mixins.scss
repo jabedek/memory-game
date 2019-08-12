@@ -1,0 +1,27 @@
+@mixin header {
+    @media (max-width: 750px) {
+        font-size: 5.7vmin;
+    }
+
+    @media (max-width: 685px) {
+        font-size: 5.2vmin
+    }
+}
+
+@mixin controls {
+    @media (max-width: 1000px) {
+        justify-content: space-between;
+        height: 25vw;
+    }
+
+    @media (max-width: 750px) {
+        justify-content: space-between;
+        height: 30vw;
+    }
+
+    @media (max-width: 685px) {
+        justify-content: space-between;
+        height: 34vw;
+    }
+
+}

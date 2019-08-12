@@ -18,6 +18,39 @@ html {
   height: 100vh;
 }
 
+.win {
+  background: #ddd;
+  background-size: 300%;
+  background-image: -webkit-gradient(linear, left top, right top, from(#d33c24), color-stop(#23d192), to(#F5E663));
+  background-image: linear-gradient(90deg, #d33c24, #23d192, #F5E663);
+  -webkit-animation: bg-animation 5s infinite;
+          animation: bg-animation 5s infinite;
+}
+
+@-webkit-keyframes bg-animation {
+  0% {
+    background-position: left;
+  }
+  50% {
+    background-position: right;
+  }
+  100% {
+    background-position: left;
+  }
+}
+
+@keyframes bg-animation {
+  0% {
+    background-position: left;
+  }
+  50% {
+    background-position: right;
+  }
+  100% {
+    background-position: left;
+  }
+}
+
 .header .instructions {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -29,10 +62,12 @@ html {
   -ms-flex-pack: distribute;
       justify-content: space-around;
   height: 30vh;
+  vertical-align: middle;
 }
 
 .header .instructions__paragraph {
   line-height: 1.5;
+  vertical-align: middle;
   font-size: 2.5vmin;
 }
 
@@ -43,14 +78,18 @@ html {
   padding-bottom: .5em;
 }
 
-.header .instructions__note {
-  padding-top: 1.25em;
-  font: italic 500 2.40vmin 'Barlow Condensed';
-}
-
 .header .instructions .order-number {
-  font: 500 2.75vmin 'Barlow Condensed';
-  width: 1.45em;
+  font: 700 2.5vmin 'Montserrat';
+  width: 4vh;
+  height: 4vh;
+  margin-right: .2em;
+  vertical-align: middle;
+  line-height: 2vw;
+  line-height: 4vh;
+  text-align: center;
+  border-radius: 50%;
+  background: #d33c24;
+  background: #F5E663;
   display: inline-block;
 }
 
@@ -101,7 +140,7 @@ html {
 .header .controls__play {
   cursor: pointer;
   text-align: center;
-  font: italic small-caps bold 4.5vmin 'Barlow Condensed';
+  font: italic small-caps bold 4.5vmin 'Montserrat';
   -webkit-transition: background-color 0.2s;
   transition: background-color 0.2s;
 }
@@ -122,20 +161,21 @@ html {
 }
 
 .header .controls__moves {
-  visibility: hidden;
+  font-size: 1rem;
+  height: 3vh;
 }
 
 .header .controls__win-info {
   visibility: hidden;
   background: #23d192;
   text-align: center;
-  padding: 0.17em 0.5em;
-  font: italic 700 5.25vmin 'Barlow Condensed';
+  padding: 0.17em 0.575em 0.17em 0.5em;
+  font: italic 900 5.25vmin 'Montserrat';
   border-radius: 0.075em;
 }
 
 .header .controls__mute {
-  font: italic 700 3vmin 'Barlow Condensed';
+  font: italic 700 3vmin 'Montserrat';
   cursor: pointer;
   font-weight: 700;
   border-bottom: 0.1em solid transparent;
@@ -180,17 +220,38 @@ html {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  width: 50%;
+  width: 50vw;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   font-family: 'Vollkorn';
   padding: 1em;
 }
 
+@media (max-width: 865px) {
+  .memory .header {
+    width: 45vw;
+  }
+}
+
 .memory .header__title {
-  padding: .2em .55em;
-  font: italic 700 7vmin 'Barlow Condensed';
+  padding: 0.15em 0.35em;
+  margin: .2em 1em 0;
+  font: italic 900 6vmin 'Montserrat';
   background: #d33c24;
   white-space: nowrap;
-  border-radius: .075em;
+  border-radius: 0.075em;
+}
+
+@media (max-width: 750px) {
+  .memory .header__title {
+    font-size: 5.7vmin;
+  }
+}
+
+@media (max-width: 685px) {
+  .memory .header__title {
+    font-size: 5.2vmin;
+  }
 }
 
 .memory .board {
@@ -202,26 +263,56 @@ html {
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -ms-flex-line-pack: stretch;
-      align-content: stretch;
-  padding: 1.5vh;
-  color: white;
-  background: white;
-  width: 44%;
+  padding: 1em;
+  width: 50vw;
+  height: 100vh;
   visibility: hidden;
 }
 
+@media (max-width: 1025px) {
+  .memory .board {
+    padding: .5em;
+  }
+}
+
+@media (max-width: 865px) {
+  .memory .board {
+    width: 55vw;
+  }
+}
+
 .memory .board__card {
-  height: 22vh;
-  width: 22vh;
-  margin: 0.3vh -1vh;
+  height: 10vw;
+  width: 10vw;
+  margin: .35em;
   border: 0.2vh solid rgba(10, 10, 10, 0.1);
+}
+
+@media (max-width: 1280px) {
+  .memory .board__card {
+    height: 9.5vw;
+    width: 9.5vw;
+    margin: 0 .55em;
+  }
+}
+
+@media (max-width: 1025px) {
+  .memory .board__card {
+    height: 10vw;
+    width: 10vw;
+    margin: 0 .55em;
+  }
+}
+
+@media (max-width: 865px) {
+  .memory .board__card {
+    height: 9.5vw;
+    width: 9.5vw;
+    margin: 0 .65em;
+  }
 }
 
 /* http://meyerweb.com/eric/tools/css/reset/ 

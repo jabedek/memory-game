@@ -1,0 +1,29 @@
+@mixin board {
+    @media (max-width: 1025px) {
+        padding: .5em;
+    }
+
+    @media (max-width: 865px) {
+        width: 55vw;
+    }
+}
+
+@mixin card {
+    @media (max-width: 1280px) {
+        height: 9.5vw;
+        width: 9.5vw;
+        margin: 0 .55em;
+    }
+
+    @media (max-width: 1025px) {
+        height: 10vw;
+        width: 10vw;
+        margin: 0 .55em;
+    }
+
+    @media (max-width: 865px) {
+        height: 9.5vw;
+        width: 9.5vw;
+        margin: 0 .65em;
+    }
+}

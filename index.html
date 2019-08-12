@@ -5,13 +5,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>MEMORY</title>
-  <link rel="icon" type="image/png" href="./images/icon.png" />
+  <title>Memory Game</title>
+  <link rel="icon" type="image/png" href="./images/game-icon.png" />
   <link rel="stylesheet" href="./styles/index.css" />
 </head>
 
 <body>
-  <div class="memory">
+  <div class="memory !win">
     <header class="header">
       <p class="header__title">MEMORY GAME</p>
 
@@ -19,16 +19,13 @@
         <p class="instructions__paragraph instructions__paragraph--important">
           Each turn consists of 2-3 moves (clicks):
         </p>
-        <p class="instructions__paragraph"><span class="order-number">1st</span> - first card choice</p>
-        <p class="instructions__paragraph"><span class="order-number">2nd</span> - second card choice</p>
+        <p class="instructions__paragraph"><span class="order-number">1</span> - first card choice</p>
+        <p class="instructions__paragraph"><span class="order-number">2</span> - second card choice</p>
         <p class="instructions__paragraph">
-          <span class="order-number">3rd</span> - conditional - hides wrong
+          <span class="order-number">3</span> - conditional - hides wrong
           picks. Not counted as a move.
         </p class="instructions__paragraph">
-        <p class="instructions__note" style="display:none;">
-          Note: If you try choosing already chosen image the click will not be
-          counted as a move.
-        </p>
+      
       </section>
 
       <section class="controls">
@@ -39,11 +36,11 @@
           WIN
         </p>
         <section class="controls__audio">
-          <audio id="audio1" src="" style="display: none"></audio>
-          <audio id="audio2" src="sounds/winsound.mp3" style="display: none"></audio>
-          <audio id="audio3" src="sounds/matchsound.mp3" style="display: none"></audio>
-          <p id="p-muted" class="controls__mute" onClick="mute()">
-            SOUND</p>
+          <audio id="audio1" class="game-sound" src="" style="display: none"></audio>
+          <audio id="audio2" class="game-sound" src="sounds/winsound.mp3" style="display: none"></audio>
+          <audio id="audio3" class="game-sound" src="sounds/matchsound.mp3" style="display: none"></audio>
+          <p id="p-muted" class="controls__mute" onClick="toggleMute()">
+            Sound</p>
         </section>
       </section>
     </header>

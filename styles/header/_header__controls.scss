@@ -1,5 +1,5 @@
 @import '../utils/variables';
-@import '../mixins/controls-mixins';
+@import '../mixins/header-mixins';
 
 .header {
     .controls {
@@ -13,7 +13,7 @@
         &__play {
             cursor: pointer;
             text-align: center;
-            font: italic small-caps bold 4.5vmin 'Barlow Condensed';
+            font: italic small-caps bold 4.5vmin 'Montserrat';
             transition: background-color 0.2s;
 
             &::after {
@@ -32,24 +32,23 @@
         }
 
         &__moves {
-            visibility: hidden;
+            font-size: 1rem;
+            height: 3vh;
         }
 
-        &__moves-info {}
 
         &__win-info {
             visibility: hidden;
-            background: rgb(35, 209, 146);
+            background: $bg-color-secondary;
             text-align: center;
-            padding: 0.17em 0.5em;
-            font: italic 700 5.25vmin 'Barlow Condensed';
+            padding: 0.17em 0.575em 0.17em 0.5em;
+            font: italic 900 5.25vmin 'Montserrat';
             border-radius: 0.075em;
         }
 
-        &__audio {}
 
         &__mute {
-            font: italic 700 3vmin 'Barlow Condensed';
+            font: italic 700 3vmin 'Montserrat';
             cursor: pointer;
             font-weight: 700;
             border-bottom: 0.1em solid transparent;

@@ -24,12 +24,15 @@ function didWin() {
 }
 
 function nextTurn() {
-  console.log("next turn")
   chosenPair = [];
   if (didWin()) {
     document.querySelector('.controls__win-info').style = 'visibility: visible';
-    document.querySelector('.controls__mute').style = 'visibility: hidden';
+    toggleMute();
     playSound(2);
+    setTimeout(() => {
+      document.querySelector(".memory").classList.add("win");
+    }, 1500);
+
   }
 }
 
@@ -71,9 +74,9 @@ function chooseCard(e) {
     }
   }
 }
+
 /* GAME CONFIG */
 function addEvents() {
-  console.log("setting events");
   let cards = document.getElementsByClassName('board__card');
 
   for (let i = 0; i < cards.length; i++) {
@@ -82,7 +85,6 @@ function addEvents() {
 }
 
 function setBoard() {
-  console.log("setting board")
   sources = [0, 0, 1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7];
   let newBoard = [];
   for (let card = 0; card < 16; card++) {
@@ -93,21 +95,23 @@ function setBoard() {
       display: false
     };
   }
-  console.table(newBoard);
   return newBoard;
 }
 
 function reset() {
-  console.log("resetting")
   board = [];
   sources = [];
   chosenPair = [];
   allMoves = 0;
   muted = false;
 
+  document.querySelector(".memory").classList.remove("win");
   document.querySelector('.controls__win-info').style = 'visibility: hidden';
   document.querySelector('.board').style = 'visibility: visible';
-  document.querySelector(".controls__moves").style = 'visibility: visible';
+
+  let moves = document.querySelector(".controls__moves");
+  moves.style = 'visibility: visible';
+  moves.innerHTML = "Moves made: ";
 
 
 }
@@ -127,16 +131,28 @@ function getRandomInt(min, max) {
 }
 
 /* SOUNDS and MUTE-info */
-function mute() {
+function toggleMute() {
+  audio1 = document.getElementById("audio1");
+  audio3 = document.getElementById("audio3");
+  let sounds = [audio1, audio2, audio3];
+
   muted = !muted;
-  let msg = muted ? 'SOUND' : 'NO SOUND';
-  document.querySelector('.controls__mute').innerHTML = msg;
+
+  if (muted) {
+    sounds.forEach(sound => sound.volume = 0.0);
+  } else {
+    sounds.forEach(sound => {
+      sound.volume = 1.0
+    });
+  }
+
+  document.querySelector('.controls__mute').innerHTML = muted ? 'No Sound' : 'Sound';
 }
 
 function playSound(id) {
   if (muted) return null;
 
-  var audio = document.getElementById(`audio${id}`);
+  let audio = document.getElementById(`audio${id}`);
 
   if (id === 1) {
     let clickVariant = getRandomInt(1, 3);
@@ -147,7 +163,6 @@ function playSound(id) {
 }
 
 function stopSound(id) {
-  console.log("stopping sound")
   let audio = document.getElementById(`audio${id}`);
   audio.pause();
   audio.currentTime = 0;
