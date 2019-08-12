@@ -150,13 +150,9 @@ function toggleMute() {
 }
 
 function unmute() {
-  audio1 = document.getElementById("audio1");
-  audio3 = document.getElementById("audio3");
-  let sounds = [audio1, audio3];
+  audio2 = document.getElementById("audio2");
   muted = false;
-  sounds.forEach(sound => {
-    sound.volume = 1.0
-  });
+  audio2.volume = 1.0
   document.querySelector('.controls__mute').innerHTML = muted ? 'No Sound' : 'Sound';
 }
 
