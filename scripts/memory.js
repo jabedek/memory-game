@@ -27,7 +27,7 @@ function nextTurn() {
   chosenPair = [];
   if (didWin()) {
     document.querySelector('.controls__win-info').style = 'visibility: visible';
-    toggleMute();
+    unmute();
     playSound(2);
     setTimeout(() => {
       document.querySelector(".memory").classList.add("win");
@@ -134,7 +134,7 @@ function getRandomInt(min, max) {
 function toggleMute() {
   audio1 = document.getElementById("audio1");
   audio3 = document.getElementById("audio3");
-  let sounds = [audio1, audio2, audio3];
+  let sounds = [audio1, audio3];
 
   muted = !muted;
 
@@ -146,6 +146,17 @@ function toggleMute() {
     });
   }
 
+  document.querySelector('.controls__mute').innerHTML = muted ? 'No Sound' : 'Sound';
+}
+
+function unmute() {
+  audio1 = document.getElementById("audio1");
+  audio3 = document.getElementById("audio3");
+  let sounds = [audio1, audio3];
+  muted = false;
+  sounds.forEach(sound => {
+    sound.volume = 1.0
+  });
   document.querySelector('.controls__mute').innerHTML = muted ? 'No Sound' : 'Sound';
 }
 
