@@ -1,0 +1,22 @@
+.memory {
+    .board {
+        order: 1;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        align-items: center;
+        align-content: stretch;
+        padding: 1.5vh;
+        color: white;
+        background: white;
+        width: 44%;
+        visibility: hidden;
+
+        &__card {
+            height: 22vh;
+            width: 22vh;
+            margin: 0.3vh -1vh;
+            border: 0.2vh solid rgba(10, 10, 10, 0.1);
+        }
+    }
+}

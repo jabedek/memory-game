@@ -1,0 +1,363 @@
+.memory .controls {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 20vw;
+}
+
+@media (max-width: 1000px) {
+  .memory .controls {
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    height: 25vw;
+  }
+}
+
+@media (max-width: 750px) {
+  .memory .controls {
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    height: 30vw;
+  }
+}
+
+@media (max-width: 685px) {
+  .memory .controls {
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    height: 34vw;
+  }
+}
+
+.memory .controls__play {
+  cursor: pointer;
+  text-align: center;
+  font: italic small-caps bold 4.5vmin 'Barlow Condensed';
+  -webkit-transition: background-color 0.2s;
+  transition: background-color 0.2s;
+}
+
+.memory .controls__play::after {
+  content: '';
+  display: block;
+  width: 0;
+  height: .1em;
+  background: #d33c24;
+  margin-top: 0.1em;
+  -webkit-transition: width 0.2s;
+  transition: width 0.2s;
+}
+
+.memory .controls__play:hover::after {
+  width: 95%;
+}
+
+.memory .controls__moves {
+  visibility: hidden;
+}
+
+.memory .controls__win-info {
+  visibility: hidden;
+  background: #23d192;
+  text-align: center;
+  padding: 0.17em 0.5em;
+  font: italic 700 5.25vmin 'Barlow Condensed';
+  border-radius: 0.075em;
+}
+
+.memory .controls__mute {
+  font: italic 700 3vmin 'Barlow Condensed';
+  cursor: pointer;
+  font-weight: 700;
+  border-bottom: 0.1em solid transparent;
+  font-variant: small-caps;
+  text-align: center;
+  position: relative;
+  z-index: 10;
+  background: transparent;
+}
+
+.memory .controls__mute::after {
+  content: '';
+  display: block;
+  width: 0;
+  height: .1em;
+  background: #d33c24;
+  margin-top: 0.1em;
+  -webkit-transition: width 0.2s;
+  transition: width 0.2s;
+}
+
+.memory .controls__mute:hover::after {
+  width: 95%;
+}
+
+.memory .header {
+  -webkit-box-ordinal-group: 1;
+      -ms-flex-order: 0;
+          order: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 50%;
+  font-family: 'Vollkorn';
+  border: 1px solid black;
+  padding: 1em;
+}
+
+.memory .header__title {
+  padding: .2em .55em;
+  font: italic 700 7vmin 'Barlow Condensed';
+  background: #d33c24;
+  white-space: nowrap;
+  border-radius: .075em;
+}
+
+.memory .header .instructions {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  height: 30vh;
+}
+
+.memory .header .instructions__paragraph {
+  line-height: 1.5;
+  font-size: 2.5vmin;
+}
+
+.memory .header .instructions__paragraph--important {
+  font-weight: bold;
+  font-size: 3vmin;
+  padding-bottom: 1em;
+}
+
+.memory .header .instructions__note {
+  padding-top: 1.25em;
+  font: italic 500 2.40vmin 'Barlow Condensed';
+}
+
+.memory .header .instructions .order-number {
+  font: 500 2.75vmin 'Barlow Condensed';
+  width: 1.45em;
+  display: inline-block;
+}
+
+.memory .board {
+  -webkit-box-ordinal-group: 2;
+      -ms-flex-order: 1;
+          order: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-line-pack: stretch;
+      align-content: stretch;
+  padding: 1.5vh;
+  color: white;
+  background: white;
+  width: 44%;
+  visibility: hidden;
+}
+
+.memory .board__card {
+  height: 22vh;
+  width: 22vh;
+  margin: 0.3vh -1vh;
+  border: 0.2vh solid rgba(10, 10, 10, 0.1);
+}
+
+html,
+body {
+  width: 100%;
+}
+
+html {
+  font-size: calc(1em + 1vw);
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+.memory {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100vh;
+}
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+/*# sourceMappingURL=index.css.map */

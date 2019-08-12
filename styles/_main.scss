@@ -1,0 +1,23 @@
+@import './utils/variables';
+@import './controls/controls';
+@import './header/header';
+@import './board/board';
+
+
+html,
+body {
+  width: 100%;
+}
+
+html {
+  font-size: calc(1em + 1vw);
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+.memory {
+  display: flex;
+  height: 100vh;
+}

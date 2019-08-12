@@ -9,24 +9,26 @@ let muted = false;
 function play() {
   stopSound(2);
   reset();
-  setBoard();
+  board = setBoard();
+  hideImages();
   addEvents();
   nextTurn();
 }
 
 function didWin() {
   let win = true;
-  for (let i = 0; i < board.length; i++) {
-    if (board[i].display === false) win = false;
-  }
+  board.forEach(card => {
+    if (card.display === false) win = false;
+  })
   return win;
 }
 
 function nextTurn() {
+  console.log("next turn")
   chosenPair = [];
   if (didWin()) {
-    document.getElementById('win').style = 'visibility: visible';
-    document.getElementById('p-muted').style = 'visibility: hidden';
+    document.querySelector('.controls__win-info').style = 'visibility: visible';
+    document.querySelector('.controls__mute').style = 'visibility: hidden';
     playSound(2);
   }
 }
@@ -47,7 +49,7 @@ function chooseCard(e) {
     displayImage(chosenCard);
     chosenPair.push(chosenCard);
     ++allMoves;
-    document.getElementById('moves').innerHTML = allMoves;
+    document.querySelector('.controls__moves').innerHTML = "Moves made: " + allMoves;
     if (chosenPair.length == 2) {
       let src1 = document.getElementById(chosenPair[0]).getAttribute('src');
       let src2 = document.getElementById(chosenPair[1]).getAttribute('src');
@@ -62,7 +64,7 @@ function chooseCard(e) {
     }
     if (chosenPair.length == 3) {
       --allMoves;
-      document.getElementById('moves').innerHTML = allMoves;
+      document.querySelector('.controls__moves').innerHTML = "Moves made: " + allMoves;
       chosenPair.pop();
       hideImages();
       nextTurn();
@@ -71,35 +73,43 @@ function chooseCard(e) {
 }
 /* GAME CONFIG */
 function addEvents() {
-  let cards = document.getElementsByClassName('card');
+  console.log("setting events");
+  let cards = document.getElementsByClassName('board__card');
+
   for (let i = 0; i < cards.length; i++) {
     cards[i].addEventListener('click', chooseCard);
   }
 }
 
 function setBoard() {
+  console.log("setting board")
   sources = [0, 0, 1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7];
+  let newBoard = [];
   for (let card = 0; card < 16; card++) {
     let srcIndex = getRandomInt(0, sources.length - 1);
     let poppedSrc = popSrc(srcIndex);
-    board[card] = {
+    newBoard[card] = {
       src: `images/${poppedSrc}.png`,
       display: false
     };
   }
-  hideImages();
+  console.table(newBoard);
+  return newBoard;
 }
 
 function reset() {
+  console.log("resetting")
   board = [];
   sources = [];
   chosenPair = [];
   allMoves = 0;
   muted = false;
-  document.getElementById('win').style = 'visibility: hidden';
-  document.getElementById('board').style = 'visibility: visible';
-  document.getElementById('p-moves').style = 'visibility: visible';
-  document.getElementById('moves').innerHTML = '';
+
+  document.querySelector('.controls__win-info').style = 'visibility: hidden';
+  document.querySelector('.board').style = 'visibility: visible';
+  document.querySelector(".controls__moves").style = 'visibility: visible';
+
+
 }
 
 /* HELPING TOOLS */
@@ -115,20 +125,23 @@ function popSrc(index) {
 function getRandomInt(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
+
 /* SOUNDS and MUTE-info */
 function mute() {
   muted = !muted;
-  let msg = muted ? 'yes' : 'no';
-  document.getElementById('muted').innerHTML = msg;
+  let msg = muted ? 'SOUND' : 'NO SOUND';
+  document.querySelector('.controls__mute').innerHTML = msg;
 }
 
 function playSound(id) {
+
   if (muted) return null;
   var audio = document.getElementById(`audio${id}`);
   audio.play();
 }
 
 function stopSound(id) {
+  console.log("stopping sound")
   let audio = document.getElementById(`audio${id}`);
   audio.pause();
   audio.currentTime = 0;
@@ -155,26 +168,3 @@ function displayImage(i) {
 function hideImage(i) {
   document.getElementById(`${i}`).setAttribute('src', 'images/HIDDEN.png');
 }
-
-/*
-function setBoard() {
-  sources = [0, 0, 1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7];
-  for (let card = 0; card < 16; card++) {
-    let srcIndex = getRandomInt(0, sources.length - 1);
-    let poppedSrc = popSrc(srcIndex);
-    board[card] = {
-      src: `${poppedSrc}.png`,
-      display: false
-    };
-  }
-  hideImages();
-}
-
-function displayImage(i) {
-  document.getElementById(`${i}`).setAttribute('src', board[i].src);
-}
-
-function hideImage(i) {
-  document.getElementById(`${i}`).setAttribute('src', 'HIDDEN.png');
-}
-*/

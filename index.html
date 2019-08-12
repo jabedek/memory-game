@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>MEMORY</title>
+  <link rel="stylesheet" href="./styles/index.css" />
+</head>
+
+<body>
+  <div class="memory">
+    <header class="header">
+      <p class="header__title">MEMORY GAME</p>
+
+      <section class="instructions">
+        <p class="instructions__paragraph instructions__paragraph--important">
+          Each turn consists of 2-3 moves (clicks):
+        </p>
+        <p class="instructions__paragraph"><span class="order-number">1st</span> - first card choice</p>
+        <p class="instructions__paragraph"><span class="order-number">2nd</span> - second card choice</p>
+        <p class="instructions__paragraph">
+          <span class="order-number">3rd</span> - conditional - hides wrong
+          picks. Not counted as a move.
+        </p class="instructions__paragraph">
+        <p class="instructions__note" style="display:none;">
+          Note: If you try choosing already chosen image the click will not be
+          counted as a move.
+        </p>
+      </section>
+
+      <section class="controls">
+        <p class="controls__play" onClick="play()">Play</p>
+        <p class="controls__moves"></p>
+
+        <p class="controls__win-info" id="win">
+          WIN
+        </p>
+        <section class="controls__audio">
+          <audio id="audio1" src="sounds/clicksound.mp3" style="display: none"></audio>
+          <audio id="audio2" src="sounds/winsound.mp3" style="display: none"></audio>
+          <audio id="audio3" src="sounds/matchsound.wav" style="display: none"></audio>
+          <p id="p-muted" class="controls__mute" onClick="mute()">
+            SOUND</p>
+        </section>
+      </section>
+    </header>
+    <article class="board">
+      <img class="board__card" id="0" src="" />
+      <img class="board__card" id="1" src="" />
+      <img class="board__card" id="2" src="" />
+      <img class="board__card" id="3" src="" />
+      <img class="board__card" id="4" src="" />
+      <img class="board__card" id="5" src="" />
+      <img class="board__card" id="6" src="" />
+      <img class="board__card" id="7" src="" />
+      <img class="board__card" id="8" src="" />
+      <img class="board__card" id="9" src="" />
+      <img class="board__card" id="10" src="" />
+      <img class="board__card" id="11" src="" />
+      <img class="board__card" id="12" src="" />
+      <img class="board__card" id="13" src="" />
+      <img class="board__card" id="14" src="" />
+      <img class="board__card" id="15" src="" />
+    </article>
+  </div>
+  <script src="./scripts/memory.js"></script>
+</body>
+
+</html>
