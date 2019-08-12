@@ -1,4 +1,60 @@
-.memory .controls {
+html,
+body {
+  width: 100%;
+}
+
+html {
+  font-size: calc(1em + 1vw);
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+.memory {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100vh;
+}
+
+.header .instructions {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  height: 30vh;
+}
+
+.header .instructions__paragraph {
+  line-height: 1.5;
+  font-size: 2.5vmin;
+}
+
+.header .instructions__paragraph--important {
+  text-align: center;
+  font-weight: bold;
+  font-size: 3vmin;
+  padding-bottom: .5em;
+}
+
+.header .instructions__note {
+  padding-top: 1.25em;
+  font: italic 500 2.40vmin 'Barlow Condensed';
+}
+
+.header .instructions .order-number {
+  font: 500 2.75vmin 'Barlow Condensed';
+  width: 1.45em;
+  display: inline-block;
+}
+
+.header .controls {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -16,7 +72,7 @@
 }
 
 @media (max-width: 1000px) {
-  .memory .controls {
+  .header .controls {
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
             justify-content: space-between;
@@ -25,7 +81,7 @@
 }
 
 @media (max-width: 750px) {
-  .memory .controls {
+  .header .controls {
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
             justify-content: space-between;
@@ -34,7 +90,7 @@
 }
 
 @media (max-width: 685px) {
-  .memory .controls {
+  .header .controls {
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
             justify-content: space-between;
@@ -42,7 +98,7 @@
   }
 }
 
-.memory .controls__play {
+.header .controls__play {
   cursor: pointer;
   text-align: center;
   font: italic small-caps bold 4.5vmin 'Barlow Condensed';
@@ -50,7 +106,7 @@
   transition: background-color 0.2s;
 }
 
-.memory .controls__play::after {
+.header .controls__play::after {
   content: '';
   display: block;
   width: 0;
@@ -61,15 +117,15 @@
   transition: width 0.2s;
 }
 
-.memory .controls__play:hover::after {
+.header .controls__play:hover::after {
   width: 95%;
 }
 
-.memory .controls__moves {
+.header .controls__moves {
   visibility: hidden;
 }
 
-.memory .controls__win-info {
+.header .controls__win-info {
   visibility: hidden;
   background: #23d192;
   text-align: center;
@@ -78,7 +134,7 @@
   border-radius: 0.075em;
 }
 
-.memory .controls__mute {
+.header .controls__mute {
   font: italic 700 3vmin 'Barlow Condensed';
   cursor: pointer;
   font-weight: 700;
@@ -90,7 +146,7 @@
   background: transparent;
 }
 
-.memory .controls__mute::after {
+.header .controls__mute::after {
   content: '';
   display: block;
   width: 0;
@@ -101,7 +157,7 @@
   transition: width 0.2s;
 }
 
-.memory .controls__mute:hover::after {
+.header .controls__mute:hover::after {
   width: 95%;
 }
 
@@ -126,7 +182,6 @@
           justify-content: space-between;
   width: 50%;
   font-family: 'Vollkorn';
-  border: 1px solid black;
   padding: 1em;
 }
 
@@ -136,41 +191,6 @@
   background: #d33c24;
   white-space: nowrap;
   border-radius: .075em;
-}
-
-.memory .header .instructions {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-  height: 30vh;
-}
-
-.memory .header .instructions__paragraph {
-  line-height: 1.5;
-  font-size: 2.5vmin;
-}
-
-.memory .header .instructions__paragraph--important {
-  font-weight: bold;
-  font-size: 3vmin;
-  padding-bottom: 1em;
-}
-
-.memory .header .instructions__note {
-  padding-top: 1.25em;
-  font: italic 500 2.40vmin 'Barlow Condensed';
-}
-
-.memory .header .instructions .order-number {
-  font: 500 2.75vmin 'Barlow Condensed';
-  width: 1.45em;
-  display: inline-block;
 }
 
 .memory .board {
@@ -202,26 +222,6 @@
   width: 22vh;
   margin: 0.3vh -1vh;
   border: 0.2vh solid rgba(10, 10, 10, 0.1);
-}
-
-html,
-body {
-  width: 100%;
-}
-
-html {
-  font-size: calc(1em + 1vw);
-}
-
-::-webkit-scrollbar {
-  display: none;
-}
-
-.memory {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  height: 100vh;
 }
 
 /* http://meyerweb.com/eric/tools/css/reset/ 

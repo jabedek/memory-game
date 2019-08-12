@@ -134,9 +134,15 @@ function mute() {
 }
 
 function playSound(id) {
-
   if (muted) return null;
+
   var audio = document.getElementById(`audio${id}`);
+
+  if (id === 1) {
+    let clickVariant = getRandomInt(1, 3);
+    audio.src = `sounds/clicksound${clickVariant}.mp3`
+  }
+
   audio.play();
 }
 
@@ -166,5 +172,5 @@ function displayImage(i) {
 }
 
 function hideImage(i) {
-  document.getElementById(`${i}`).setAttribute('src', 'images/HIDDEN.png');
+  document.getElementById(`${i}`).setAttribute('src', 'images/cover.png');
 }
