@@ -1,0 +1,10 @@
+@mixin memory {
+    @media (orientation: portrait) {
+        flex-direction: column;
+        align-items: center;
+
+        .break {
+            display: none;
+        }
+    }
+}

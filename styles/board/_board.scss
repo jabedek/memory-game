@@ -6,23 +6,18 @@
         display: flex;
         flex-wrap: wrap;
         align-items: center;
-        padding: 1em;
-        width: 50vw;
-        height: 100vh;
+        width: 50%;
+        height: 100%;
         visibility: hidden;
 
         @include board;
 
-
         &__card {
-
             height: 10vw;
             width: 10vw;
             margin: .35em;
             border: 0.2vh solid rgba(10, 10, 10, 0.1);
             @include card;
-
-
         }
     }
 }

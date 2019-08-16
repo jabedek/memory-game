@@ -1,0 +1,15 @@
+@import '../utils/variables';
+@import '../mixins/header-mixins';
+
+.header {
+    .logo {
+        padding: 0.15em 0.35em;
+        margin: 0.5em 0;
+        font: italic 900 6.35vmin 'Montserrat';
+        background: $bg-color-main;
+        white-space: nowrap;
+        border-radius: 0.075em;
+
+        @include logo;
+    }
+}

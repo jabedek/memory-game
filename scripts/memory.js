@@ -146,14 +146,14 @@ function toggleMute() {
     });
   }
 
-  document.querySelector('.controls__mute').innerHTML = muted ? 'No Sound' : 'Sound';
+  document.querySelector('.controls__mute').innerHTML = muted ? 'Sound: NO' : 'Sound: ON';
 }
 
 function unmute() {
   audio2 = document.getElementById("audio2");
   muted = false;
   audio2.volume = 1.0
-  document.querySelector('.controls__mute').innerHTML = muted ? 'No Sound' : 'Sound';
+  document.querySelector('.controls__mute').innerHTML = muted ? 'Sound: NO' : 'Sound: ON';
 }
 
 function playSound(id) {

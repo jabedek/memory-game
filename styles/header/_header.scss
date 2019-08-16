@@ -1,34 +1,20 @@
 @import '../utils/variables';
+@import './header__logo';
 @import './header__instructions';
 @import './header__controls';
-@import '../mixins/header-mixins';
 
 .memory {
     .header {
         order: 0;
         display: flex;
-        flex-direction: column;
+        flex-flow: column nowrap;
         align-items: center;
         align-content: center;
         justify-content: space-between;
-        width: 50vw;
-        box-sizing: border-box;
-        font-family: 'Vollkorn';
+        width: 50%;
+        height: 100%;
         padding: 1em;
 
-        @media (max-width: 865px) {
-            width: 45vw;
-        }
-
-        &__title {
-            padding: 0.15em 0.35em;
-            margin: .2em 1em 0;
-            font: italic 900 6vmin 'Montserrat';
-            background: $bg-color-main;
-            white-space: nowrap;
-            border-radius: 0.075em;
-            @include header;
-
-        }
+        @include header;
     }
 }

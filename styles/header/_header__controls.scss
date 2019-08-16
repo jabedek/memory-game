@@ -3,6 +3,7 @@
 
 .header {
     .controls {
+        margin-top: 1em;
         display: flex;
         flex-direction: column;
         justify-content: space-evenly;
@@ -11,16 +12,46 @@
         @include controls;
 
         &__play {
+            padding: 0.3em 0.5em 0;
             cursor: pointer;
-            text-align: center;
             font: italic small-caps bold 4.5vmin 'Montserrat';
+            text-align: center;
+            border-radius: 0.075em;
             transition: background-color 0.2s;
+            min-height: 8vh;
+            @include controls__play;
 
             &::after {
                 content: '';
                 display: block;
                 width: 0;
-                height: .1em;
+                height: 0.3vh;
+                background: $bg-color-main;
+                margin-top: 0.1em;
+                transition: width 0.2s;
+            }
+
+            &:hover::after {
+                width: 95%;
+            }
+        }
+
+        &__mute {
+            padding: 0.3em 0.5em 0;
+            cursor: pointer;
+            font: italic small-caps bold 2.5vmin 'Montserrat';
+            text-align: center;
+            border-radius: 0.075em;
+            transition: background-color 0.2s;
+            margin: 1em 0;
+            min-height: 4vh;
+            @include controls__mute;
+
+            &::after {
+                content: '';
+                display: block;
+                width: 0;
+                height: 0.3vh;
                 background: $bg-color-main;
                 margin-top: 0.1em;
                 transition: width 0.2s;
@@ -32,10 +63,11 @@
         }
 
         &__moves {
-            font-size: 1rem;
+            font: italic 500 2.5vmin 'Montserrat';
             height: 3vh;
-        }
 
+            @include controls__moves;
+        }
 
         &__win-info {
             visibility: hidden;
@@ -44,33 +76,6 @@
             padding: 0.17em 0.575em 0.17em 0.5em;
             font: italic 900 5.25vmin 'Montserrat';
             border-radius: 0.075em;
-        }
-
-
-        &__mute {
-            font: italic 700 3vmin 'Montserrat';
-            cursor: pointer;
-            font-weight: 700;
-            border-bottom: 0.1em solid transparent;
-            font-variant: small-caps;
-            text-align: center;
-            position: relative;
-            z-index: 10;
-            background: transparent;
-
-            &::after {
-                content: '';
-                display: block;
-                width: 0;
-                height: .1em;
-                background: $bg-color-main;
-                margin-top: 0.1em;
-                transition: width 0.2s;
-            }
-
-            &:hover::after {
-                width: 95%;
-            }
         }
     }
 }

@@ -1,3 +1,6 @@
+@import '../utils/variables';
+@import '../mixins/memory-mixins';
+
 html,
 body {
     width: 100%;
@@ -13,18 +16,21 @@ html {
 
 .memory {
     display: flex;
+    flex-flow: row nowrap;
     height: 100vh;
+    width: 100vw;
+    @include memory;
+
 
 }
 
 .win {
-    background: #ddd;
+    // background: #ddd;
     background-size: 300%;
-    background-image: linear-gradient(90deg, #d33c24, #23d192, #F5E663);
+    background-image: linear-gradient(90deg, $bg-color-main, $bg-color-secondary, $bg-color-bullet);
     animation: bg-animation 5s infinite; // originally was 25s
 
 }
-
 
 @keyframes bg-animation {
     0% {

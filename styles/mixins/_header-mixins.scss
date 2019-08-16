@@ -1,27 +1,145 @@
 @mixin header {
-    @media (max-width: 750px) {
-        font-size: 5.7vmin;
-    }
+  @media (max-width: 900px) {
+    width: 40%;
+  }
 
-    @media (max-width: 685px) {
-        font-size: 5.2vmin
-    }
+  @media (max-width: 750px) {
+    width: 35%;
+  }
+
+  @media (max-width: 1025px) and (orientation: portrait) {
+    width: 100%;
+    padding: 1em 0;
+    max-height: 45vh;
+    padding: 1em 1em 2em;
+  }
+
+  @media (max-width: 800px) and (orientation: portrait) {
+    width: 100%;
+    padding: 1em 0;
+    max-height: 45vh;
+    padding: 1em 1em 2em;
+  }
+
+  @media (max-width: 800px) and (orientation: portrait) {
+    width: 100%;
+    padding: 1em 0;
+    max-height: 50vh;
+    padding: 1em 1em 2em;
+  }
+}
+
+@mixin logo {
+  @media (max-width: 1000px) {
+    font-size: 6vmin;
+  }
+
+  @media (max-width: 865px) {
+    font-size: 5.7vmin;
+  }
+
+  @media (max-width: 825px) {
+    font-size: 5.4vmin;
+  }
+
+  @media (max-width: 750px) {
+    font-size: 4.9vmin;
+  }
+
+  @media (max-width: 750px) {
+    font-size: 4.5vmin;
+  }
+
+  @media (max-width: 700px) {
+    font-size: 4vmin;
+  }
+
+  @media (max-width: 625px) {
+    font-size: 7vmin;
+  }
+}
+
+@mixin instructions__paragraph {
+  @media (max-width: 750px) {
+    font-size: 2.6vmin;
+  }
+}
+
+@mixin instructions__paragraph--important {
+  @media (max-width: 1000px) {
+    font-size: 2.45vmin;
+  }
+
+  @media (max-width: 865px) {
+    font-size: 2.3vmin;
+  }
+
+  @media (max-width: 800px) {
+    font-size: 2.25vmin;
+  }
+
+  @media (max-width: 750px) {
+    font-size: 2.25vmin;
+  }
+
+  @media (max-width: 685px) {
+    font-size: 2.15vmin;
+  }
+
+  @media (max-width: 800px) and (orientation: portrait) {
+    font-size: 3vmin;
+  }
+}
+
+@mixin order-number {
+  @media (max-width: 800px) and (orientation: portrait) {
+    width: 3vh;
+    height: 3vh;
+    line-height: 3vh;
+  }
 }
 
 @mixin controls {
-    @media (max-width: 1000px) {
-        justify-content: space-between;
-        height: 25vw;
-    }
+  @media (max-width: 750px) {
+    justify-content: space-between;
+    height: 30vw;
+    margin-top: 2em;
+  }
 
-    @media (max-width: 750px) {
-        justify-content: space-between;
-        height: 30vw;
-    }
+  @media (max-width: 685px) {
+    justify-content: space-between;
+    height: 34vw;
+  }
+}
 
-    @media (max-width: 685px) {
-        justify-content: space-between;
-        height: 34vw;
-    }
+@mixin controls__play {
+  @media (max-width: 800px) and (orientation: portrait) {
+    // margin-top: 2em;
+    max-height: 5vh;
+  }
 
+  @media (max-width: 360px) and (orientation: portrait) {
+    margin: 0;
+    padding: 0;
+  }
+}
+
+@mixin controls__moves {
+  @media (max-width: 800px) and (orientation: portrait) {
+    margin-top: 1em;
+    font: italic 900 4vmin 'Montserrat';
+    min-height: 3vh;
+  }
+
+  @media (max-width: 360px) and (orientation: portrait) {
+    margin: 0;
+    padding: 0;
+  }
+}
+
+@mixin controls__mute {
+  @media (max-width: 360px) and (orientation: portrait) {
+    margin: 0;
+    padding: 0;
+  }
 }

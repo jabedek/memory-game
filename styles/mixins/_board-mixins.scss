@@ -1,29 +1,136 @@
 @mixin board {
     @media (max-width: 1025px) {
-        padding: .5em;
+        padding: 0.5em;
     }
 
-    @media (max-width: 865px) {
-        width: 55vw;
+    @media (max-width: 900px) {
+        width: 60%;
+    }
+
+    @media (max-width: 800px) {
+        width: 65%;
+    }
+
+    @media (max-width: 1025px) and (orientation: portrait) {
+        width: 90%;
+        height: 55vh;
+        margin-top: 4em;
+        padding: 0 7em;
+        align-self: center;
+        align-items: center;
+        align-content: center;
+        justify-content: flex-start;
+    }
+
+    @media (max-width: 800px) and (orientation: portrait) {
+        width: 90%;
+        height: 55vh;
+        margin-top: 1em;
+        padding: 0 5em;
+        align-self: center;
+        align-items: center;
+        align-content: center;
+        justify-content: flex-start;
+    }
+
+
+    @media (width: 768px) and (orientation: portrait) {
+        padding: 0 6.4em;
+        margin-top: 4em;
+    }
+
+    @media (max-width: 400px) and (orientation: portrait) {
+        width: 95%;
+        height: 55vh;
+        margin-top: 1em;
+        padding: 0 2em;
+        align-self: center;
+        align-items: center;
+        align-content: center;
+        justify-content: flex-start;
+    }
+
+    @media (width: 414px) and (orientation: portrait) {
+        padding: 0 2em;
+    }
+
+    @media (width: 411px) and (orientation: portrait) {
+        padding: 0 2em;
+    }
+
+    @media (max-width: 375px) and (orientation: portrait) {
+        width: 95%;
+        height: 55vh;
+        margin-top: 4em;
+        padding: 0 2em;
+        align-self: center;
+        align-items: center;
+        align-content: center;
+        justify-content: flex-start;
+    }
+
+    @media (max-width: 360px) and (orientation: portrait) {
+        height: 50vh;
+        align-self: center;
+        align-items: center;
+        align-content: center;
+        justify-content: space-between;
+        width: 75%;
+        padding: 0;
     }
 }
 
 @mixin card {
-    @media (max-width: 1280px) {
-        height: 9.5vw;
-        width: 9.5vw;
-        margin: 0 .55em;
+    @media (max-width: 1000px) {
+        height: 11vw;
+        width: 11vw;
+        margin: 0 0.25em;
     }
 
-    @media (max-width: 1025px) {
-        height: 10vw;
-        width: 10vw;
-        margin: 0 .55em;
+    @media (max-width: 750px) {
+        height: 12vw;
+        width: 12vw;
+        margin: 0 0.25em;
     }
 
-    @media (max-width: 865px) {
-        height: 9.5vw;
-        width: 9.5vw;
-        margin: 0 .65em;
+    @media (max-width: 1025px) and (orientation: portrait) {
+        height: 15.5vw;
+        width: 15.5vw;
+    }
+
+    @media (max-width: 800px) and (orientation: portrait) {
+        height: 16vw;
+        width: 16vw;
+    }
+
+    @media (width: 768px) and (orientation: portrait) {
+        height: 14.5vw;
+        width: 14.5vw;
+    }
+
+    @media (max-width: 400px) and (orientation: portrait) {
+        height: 17vw;
+        width: 17vw;
+    }
+
+    @media (max-width: 320px) and (orientation: portrait) {
+        height: 16vw;
+        width: 16vw;
+    }
+
+    @media (max-height: 400px) and (orientation: landscape) {
+        height: 12vw;
+        width: 12vw;
+    }
+
+    @media (width: 812px) and (orientation: landscape) {
+        height: 11vw;
+        width: 11vw;
+    }
+
+
+    @media (max-width: 360px) and (orientation: portrait) {
+        height: 15vw;
+        width: 15vw;
     }
 }

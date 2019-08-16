@@ -12,36 +12,42 @@
 </head>
 
 <body>
-  <div class="memory !win">
+  <div class="memory">
     <header class="header">
-      <p class="header__title">Memory Game</p>
+      <p class="logo">Memory Game</p>
 
       <section class="instructions">
         <p class="instructions__paragraph instructions__paragraph--important">
-          Every click must be performed on cards. <br />Each turn consists of 2-3 moves:
+          Every click must be performed on a card. <br class="break" />Each turn consists of 2 moves:
         </p>
         <p class="instructions__paragraph"><span class="order-number">1</span> - first card choice</p>
         <p class="instructions__paragraph"><span class="order-number">2</span> - second card choice</p>
-        <p class="instructions__paragraph">
-          <span class="order-number">3</span> - conditional - hides wrong
-          picks. Not counted as a move.
+        <p class="instructions__paragraph ">
+          <span class="order-number order-number--secondary">3</span> - conditional - hides wrong picks. <br
+            class="break" />Also
+          performed on cards.
         </p class="instructions__paragraph">
 
       </section>
 
       <section class="controls">
-        <p class="controls__play" onClick="play()">Play</p>
-        <p class="controls__moves"></p>
 
         <p class="controls__win-info" id="win">
           WIN
         </p>
+
+        <p class="controls__play" onClick="play()">Play</p>
+
+        <p id="p-muted" class="controls__mute" onClick="toggleMute()">
+          Sound: ON</p>
+
+        <p class="controls__moves">Moves made:</p>
+
         <section class="controls__audio">
           <audio id="audio1" class="game-sound" src="" style="display: none"></audio>
           <audio id="audio2" class="game-sound" src="sounds/winsound.mp3" style="display: none"></audio>
           <audio id="audio3" class="game-sound" src="sounds/matchsound.mp3" style="display: none"></audio>
-          <p id="p-muted" class="controls__mute" onClick="toggleMute()">
-            Sound</p>
+
         </section>
       </section>
     </header>
